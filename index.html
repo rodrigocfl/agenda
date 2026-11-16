@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agenda</title>
+<meta name="theme-color" content="#1E2A3F">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Agenda">
+<style>
+  html,body{margin:0;height:100%;background:#FBF5EA;overflow:hidden}
+  #splash{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+    background:linear-gradient(165deg,#1E2A3F 0%,#24508A 55%,#EBA94A 125%);color:#fff;font:700 18px system-ui,sans-serif;transition:opacity .4s}
+  #splash img{width:120px;height:120px;border-radius:28px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+  #splash a{color:#FFD38A;font-size:15px;margin-top:6px;display:none}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0}
+</style>
+</head>
+<body>
+<iframe id="app" title="Agenda do Sargentão & da Delega" allow="clipboard-write"
+  src="https://script.google.com/macros/s/AKfycbxU11v0Z-VZ68qY5ANyLj-v1Rhd4j0WLPrH7HFK1FVdt9eNlQxWvMECBHSSFgfMttg/exec"></iframe>
+<div id="splash">
+  <img src="icon-192.png" alt="">
+  <div>Abrindo a agenda…</div>
+  <a id="direto" href="https://script.google.com/macros/s/AKfycbxU11v0Z-VZ68qY5ANyLj-v1Rhd4j0WLPrH7HFK1FVdt9eNlQxWvMECBHSSFgfMttg/exec">Demorando? Toque aqui</a>
+</div>
+<script>
+  var s=document.getElementById('splash');
+  document.getElementById('app').addEventListener('load',function(){s.style.opacity=0;setTimeout(function(){s.remove()},450);});
+  setTimeout(function(){var a=document.getElementById('direto');if(a)a.style.display='block';},12000);
+</script>
+</body>
+</html>
